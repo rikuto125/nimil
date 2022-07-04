@@ -1,0 +1,63 @@
+{
+  "name": "nextjs-template",
+  "version": "0.1.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "yarn build:api && next build",
+    "start": "next start",
+    "build:api": "aspida",
+    "watch:api": "aspida --watch",
+    "lint:eslint": "eslint './**/*.{ts,tsx}'",
+    "lint:prettier": "prettier --check './**/*.{ts,tsx}'",
+    "lint:stylelint": "stylelint './**/*.{css,scss}'",
+    "lint": "yarn lint:eslint; yarn lint:prettier; yarn lint:stylelint",
+    "fmt:eslint": "eslint --fix './**/*.{ts,tsx}'",
+    "fmt:prettier": "prettier --write './**/*.{ts,tsx}'",
+    "fmt:stylelint": "stylelint --fix './**/*.{css,scss}'",
+    "fmt": "yarn fmt:eslint; yarn fmt:prettier; yarn fmt:stylelint;",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint",
+      "prettier --check"
+    ],
+    "*.{css,scss}": [
+      "stylelint"
+    ]
+  },
+  "dependencies": {
+    "@aspida/axios": "^1.7.1",
+    "@nimil-jp/react-utils": "^0.0.51",
+    "axios": "^0.25.0",
+    "next": "^12.1.0",
+    "nookies": "^2.5.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.25.0",
+    "recoil": "^0.5.2"
+  },
+  "devDependencies": {
+    "@types/react": "17.0.38",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "8.7.0",
+    "eslint-config-next": "12.0.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^12.3.1",
+    "prettier": "^2.5.1",
+    "sass": "^1.49.0",
+    "stylelint": "^14.3.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
+    "stylelint-config-recommended-scss": "^5.0.2",
+    "stylelint-scss": "^4.1.0",
+    "typescript": "^4.5.5"
+  }
+}

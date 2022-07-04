@@ -1,0 +1,13 @@
+{
+  "plugins": [
+    "stylelint-scss"
+  ],
+  "extends": [
+    "stylelint-config-idiomatic-order",
+    "stylelint-config-recommended-scss"
+  ],
+  "rules": {
+    "string-quotes": "single",
+    "no-descending-specificity": null
+  }
+}

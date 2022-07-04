@@ -1,0 +1,69 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "next",
+    "prettier",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "import"
+  ],
+  "rules": {
+    "react/display-name": "off",
+    "react-hooks/rules-of-hooks": "off",
+    "@typescript-eslint/array-type": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "import/no-duplicates": "error",
+    "sort-imports": 0,
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@nimil-jp/**",
+            "group": "internal",
+            "position": "before"
+          }
+        ],
+        "alphabetize": {
+          "order": "asc"
+        },
+        "pathGroupsExcludedImportTypes": ["@nimil-jp/**"],
+        "newlines-between": "always"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  }
+}
